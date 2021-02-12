@@ -39,6 +39,11 @@ jobs:
           path: "**/node_modules"
           key: ${{ runner.os }}-cacheNodeModules11-${{ steps.nodeModulesCacheKey.outputs.value }}
           restore-keys: ${{ runner.os }}-cacheNodeModules11-
+      - name: Save cache artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: cache_win
+          path: "**/node_modules"
       - name: Get yarn cache directory path
         id: yarnCacheDirPath
         if: ${{ steps.cacheNodeModules.outputs.cache-hit != 'true' }}
@@ -102,6 +107,11 @@ jobs:
           path: "**/node_modules"
           key: ${{ runner.os }}-cacheNodeModules11-${{ steps.nodeModulesCacheKey.outputs.value }}
           restore-keys: ${{ runner.os }}-cacheNodeModules11-
+      - name: Save cache artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: cache_linux
+          path: "**/node_modules"
       - name: Get yarn cache directory path
         id: yarnCacheDirPath
         if: ${{ steps.cacheNodeModules.outputs.cache-hit != 'true' }}
@@ -158,6 +168,11 @@ jobs:
           path: "**/node_modules"
           key: ${{ runner.os }}-cacheNodeModules11-${{ steps.nodeModulesCacheKey.outputs.value }}
           restore-keys: ${{ runner.os }}-cacheNodeModules11-
+      - name: Save cache artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: cache_mac
+          path: "**/node_modules"
       - name: Get yarn cache directory path
         id: yarnCacheDirPath
         if: ${{ steps.cacheNodeModules.outputs.cache-hit != 'true' }}
