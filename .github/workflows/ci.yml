@@ -28,7 +28,7 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: "2.x"
-
+      - run: echo "C:\msys64\usr\bin" >> $GITHUB_PATH
       - name: Compute node modules cache key
         id: nodeModulesCacheKey
         run: echo "::set-output name=value::$(node build/azure-pipelines/common/computeNodeModulesCacheKey.js)"
@@ -37,8 +37,8 @@ jobs:
         uses: actions/cache@v2
         with:
           path: "**/node_modules"
-          key: ${{ runner.os }}-cacheNodeModules15-${{ steps.nodeModulesCacheKey.outputs.value }}
-          restore-keys: ${{ runner.os }}-cacheNodeModules15
+          key: ${{ runner.os }}-cacheNodeModules16-${{ steps.nodeModulesCacheKey.outputs.value }}
+          restore-keys: ${{ runner.os }}-cacheNodeModules16
       #- name: Save cache artifact
       #  uses: actions/upload-artifact@v2
       #  with:
