@@ -37,8 +37,8 @@ jobs:
         uses: actions/cache@v2
         with:
           path: "**/node_modules"
-          key: ${{ runner.os }}-cacheNodeModules16-${{ steps.nodeModulesCacheKey.outputs.value }}
-          restore-keys: ${{ runner.os }}-cacheNodeModules16
+          key: ${{ runner.os }}-gnu1-${{ steps.nodeModulesCacheKey.outputs.value }}
+          restore-keys: ${{ runner.os }}-gnu1
       #- name: Save cache artifact
       #  uses: actions/upload-artifact@v2
       #  with:
