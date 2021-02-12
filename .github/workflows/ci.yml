@@ -29,7 +29,9 @@ jobs:
         with:
           python-version: "2.x"
       - run: echo "C:\msys64\usr\bin" >> $GITHUB_PATH
-      - run: echo $env:PATH
+      - run: |
+          echo $env:PATH
+          tar --version
       - name: Compute node modules cache key
         id: nodeModulesCacheKey
         run: echo "::set-output name=value::$(node build/azure-pipelines/common/computeNodeModulesCacheKey.js)"
